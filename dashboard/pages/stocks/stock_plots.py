@@ -19,13 +19,12 @@ def plot_polar(symbol):
 
     data_df = pd.read_pickle("data/polar_data_df.pkl")
 
-    columns = ['1Y Return', '3M Volatility', 'Beta',
+    columns = ['1Y Return', '3M Volatility',
        'Dividend Yield', '5Y Dividend Growth',
        'P/E', 'P/FCF', '5Y EPS Growth', '12M EPS Growth',
        'Debt/Equity', 'Net Profit Margin', 'Return on Assets',
        'Return on Equity']
     data_df.columns = columns
-    del data_df['Beta']
 
     for col in data_df.columns:
         if col in ['3MonthADReturnStd', 'beta', 'peBasicExclExtraTTM', 'pfcfShareTTM', 'longTermDebt/equityQuarterly']:

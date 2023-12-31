@@ -275,8 +275,8 @@ clientside_callback(
 
 
 @callback(
-    # Output("model-textarea", "value"),
     Output("chat-history", "children"),
+    Output("input-textarea", "value"),
     Output("loading-button", "loading"),
     State("chat-history", "children"),
     State("input-textarea", "value"),
@@ -304,7 +304,7 @@ def add_chat_card(chat_history, input_text, n_clicks):
         chat_history.append(user_card)
         chat_history.append(ai_card)
 
-    return chat_history, False
+    return chat_history, "", False
 
 
 @callback(
